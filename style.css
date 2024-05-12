@@ -23,7 +23,7 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
 }
-main,
+
 section {
   min-height: 100vh;
   padding: 10rem 9% 2rem; /* padding atas, kanan kiri, bawah */
@@ -271,17 +271,29 @@ display: none;
 }
 .contact form {
   max-width: 70rem;
-  /* border: solid yellow 1px; */
   margin: 1rem auto;
   text-align: center;
   margin-bottom: 3rem;
 }
-.contact form .input-box {
+
+.contact form .input-row {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
   flex-wrap: wrap;
 }
-.contact form .input-box input,
+.contact form label {
+  font-size: 1.6rem;
+  text-align: left;
+  display: block;
+}
+.contact form label .required {
+  color: rgb(246, 34, 34);
+}
+.contact form .input-row .input-box {
+  width: 40%;
+}
+.contact form .input-row .input-box input,
 .contact form textarea {
   width: 100%;
   padding: 1.5rem;
@@ -291,8 +303,9 @@ display: none;
   border-radius: 0.8rem;
   margin: 0.7rem 0;
 }
+
 .contact form .input-box input {
-  width: 49%;
+  width: 100%;
 }
 .contact form textarea {
   resize: none;
@@ -328,7 +341,6 @@ display: none;
   font-size: 2.4rem;
   color: var(--snd-bg-color);
 }
-/* BreakPoint */
 @media (max-width: 1200px) {
   html {
     font-size: 55%;
@@ -338,8 +350,7 @@ display: none;
   .header {
     padding: 2rem 3%;
   }
-  section,
-  main {
+  section {
     padding: 10rem 3%;
   }
   .services {
@@ -356,15 +367,16 @@ display: none;
   }
 }
 @media (max-width: 768px) {
+  html,
+  .about-content h2.heading {
+    text-align: center;
+  }
   #menu-icon {
     display: block;
     cursor: pointer;
     /* transition: 0.5s ease; */
     transition: transform 0.3s ease;
   }
-  /* #menu-icon.fa-xmark {
-transform: rotate(90deg);
-} */
   .navbar {
     position: absolute;
     top: 100%;
@@ -401,6 +413,14 @@ transform: rotate(90deg);
     width: 70vw;
     margin-top: 4rem;
   }
+  .about {
+    flex-direction: column;
+  }
+  .about-img img {
+    width: 90vw;
+    margin: 4rem 0 0 0;
+    /* margin-top: 4rem; */
+  }
   .services h2 {
     margin-bottom: 3rem;
   }
@@ -429,7 +449,9 @@ transform: rotate(90deg);
   html {
     font-size: 50%;
   }
-  .contact form .input-box input {
+
+  .contact form .input-row .input-box {
     width: 100%;
+    margin-bottom: 1rem;
   }
 }
