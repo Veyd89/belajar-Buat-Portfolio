@@ -5,11 +5,11 @@ menuIcon.addEventListener("click", () => {
   menuIcon.classList.toggle("fa-xmark");
   navbar.classList.toggle("active");
 });
-let sectionsMain = document.querySelectorAll("section ,main");
+let sections = document.querySelectorAll("section");
 // let main = document.querySelector("main");
 let navlink = document.querySelectorAll("header nav a");
 window.onscroll = () => {
-  sectionsMain.forEach((sec) => {
+  sections.forEach((sec) => {
     let top = window.scrollY;
     let offset = sec.offsetTop - 150;
     let height = sec.offsetHeight;
